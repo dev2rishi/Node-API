@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 // routes middleware
 app.use('/api/products', productRoute)
 
-mongoose.set("strictQuery", false)
+// mongoose.set("strictQuery", false)
 mongoose.connect(MONGO_URL)
   .then(() => {
     console.log('Connected to mongodb')
