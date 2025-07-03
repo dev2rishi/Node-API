@@ -1,8 +1,8 @@
-const express = require('express')
+import { Router } from 'express'
+import { getProductsById, createProducts, updateProducts, deleteProductById, getProducts } from '../controllers/productController.js'
+// import * as productController from '../controllers/productController.js'
 
-const { getProducts, getProductsById, createProducts, updateProducts, deleteProductById } = require('../controllers/productController')
-
-const router = express.Router()
+const router = Router()
 
 // create product data using productModel schema
 
@@ -23,5 +23,4 @@ router.put('/:id', updateProducts)
 // delete product data by id
 router.delete('/:id',deleteProductById)
 
-module.exports = router
-
+export default router

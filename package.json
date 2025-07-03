@@ -1,6 +1,7 @@
 {
   "name": "nodeapi",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -11,9 +12,14 @@
   "keywords": [],
   "author": "Rishabh Singh",
   "license": "ISC",
-  
   "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
     "@types/node": "^20.14.0",
+    "eslint": "^9.10.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^7.1.0",
     "nodemon": "^3.1.2"
   },
   "dependencies": {

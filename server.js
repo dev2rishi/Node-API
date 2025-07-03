@@ -1,17 +1,17 @@
-require('dotenv').config()
-const express = require('express')
-const cors = require('cors')
+import 'dotenv/config'
+import express from 'express'
+import cors from 'cors'
+import mongoose from 'mongoose'
+import path from 'path'
+import { fileURLToPath } from 'url'
+import productRoute from './routes/productRoute.js'
+import { errorMiddleware } from './middleware/errorMiddleware.js'
+
 const app = express()
-const mongoose = require('mongoose')
-const path = require('path')
-
-const productRoute = require('./routes/productRoute')
-const errorMiddleware = require('./middleware/errorMiddleware')
-
-
 const MONGO_URL = process.env.MONGO_URL
 const PORT = process.env.PORT || 3000
 const FRONTEND = process.env.FRONTEND
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 var corsOptions = {
   origin: FRONTEND,
@@ -23,7 +23,7 @@ app.use(cors(corsOptions))
 app.use(express.json()) 
 app.use(express.urlencoded({extended: false}))
 app.use(errorMiddleware)
-app.use(express.static(path.join(__dirname, './dist')));
+// app.use(express.static(path.join(__dirname, './dist')));
 
 
 
